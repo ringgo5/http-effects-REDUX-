@@ -1,1 +1,14 @@
-<p>usuario works!</p>
+<div class="row row-cols-1 row-cols-md-3 g-4"
+*ngIf="usuario1">
+    <div class="col">
+        <div class="card h-100">
+            <img [src]="usuario1.avatar" class="card-img-top" >
+            <div class="card-body">
+                
+                <h5 class="card-title">{{usuario1.first_name}} {{usuario1.last_name}}</h5>
+                <h5 class="card-text">{{usuario1.email}}</h5>
+                <h5 class="card-text text-muted">ID: {{usuario1.id}}</h5>
+                
+            </div>
+        </div>
+    </div>

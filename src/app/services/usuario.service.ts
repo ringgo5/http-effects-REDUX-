@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { SafeResourceUrl } from '@angular/platform-browser';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -12,11 +13,20 @@ export class UsuarioService {
  
   getUsers(){
 
-   return this.http.get(`${this.url}/users?per_page=6`)
+   return this.http.get(`${this.url}/users?per_page=6&delay=3`)
     .pipe(
       map<any,any>(resp=>resp['data'])
     );
 
 
   }
+  getUserById(id:string){
+
+    return this.http.get(`${this.url}/users/${id}`)
+     .pipe(
+       map<any,any>(resp=>resp['data'])
+     );
+ 
+ 
+   }
 }
